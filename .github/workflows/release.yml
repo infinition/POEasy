@@ -1,0 +1,56 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install PyQt6 keyboard pyinstaller
+
+      - name: Generate icon
+        run: python create_icon.py
+
+      - name: Build executable
+        run: python build.py
+
+      - name: Generate changelog from commits
+        id: changelog
+        shell: bash
+        run: |
+          # Get previous tag (if any)
+          PREV_TAG=$(git tag --sort=-creatordate | head -2 | tail -1)
+          if [ "$PREV_TAG" = "${{ github.ref_name }}" ] || [ -z "$PREV_TAG" ]; then
+            # First release — use all commits
+            LOG=$(git log --pretty=format:"- %s (%h)" --no-merges)
+          else
+            LOG=$(git log "${PREV_TAG}..HEAD" --pretty=format:"- %s (%h)" --no-merges)
+          fi
+          # Write to file (multiline safe)
+          echo "$LOG" > changelog.txt
+          cat changelog.txt
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: POEasy ${{ github.ref_name }}
+          body_path: changelog.txt
+          files: dist/POEasy.exe
+          draft: false
+          prerelease: false
