@@ -4,6 +4,10 @@ A lightweight Windows macro tool that maps a single keypress (or key combination
 
 Built for repetitive key-sequence tasks where you want human-like timing variance instead of robotic fixed-rate input.
 
+<img width="1064" height="853" alt="image" src="https://github.com/user-attachments/assets/bb82140e-68bc-4de6-8fa8-f6865d6c9090" />
+
+
+
 ## Features
 
 - **Per-macro key sequences** with support for single keys and modifier combos (`Ctrl+G`, `Shift+A`, `Ctrl+Shift+B`, etc.)
