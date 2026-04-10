@@ -51,3 +51,14 @@ When you press a trigger key, POEasy fires each key in the mapped sequence with 
 ## License
 
 [MIT](LICENSE)
+
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=infinition%2FPOEasy&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=infinition/POEasy&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=infinition/POEasy&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=infinition/POEasy&type=date&legend=top-left" />
+ </picture>
+</a>
