@@ -1,4 +1,6 @@
-# POEasy 2.0
+﻿# POEasy 2.0
+
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat&logo=windows&logoColor=white) [![Release](https://img.shields.io/github/v/release/infinition/POEasy?style=flat)](https://github.com/infinition/POEasy/releases) [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/infinition)
 
 A lightweight Windows macro utility that maps a single keypress or key combination to a sequence of keystrokes fired with configurable random delays.
 
@@ -63,4 +65,4 @@ When a trigger key is pressed, POEasy dispatches each keystroke in the mapped se
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT. See [LICENSE](LICENSE).
